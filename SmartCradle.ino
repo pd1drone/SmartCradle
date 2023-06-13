@@ -158,28 +158,28 @@ void ControlMotorSpeed() {
   if (MotorSpeed == 0){
     myservo.write(0);
   }else if (MotorSpeed == 1){
-    for(pos = 0; pos <=180; pos +=7){
+    for(pos = 0; pos <=180; pos +=5){
       myservo.write(pos);
       delay(50);
     }
-    for(pos = 180; pos>=0; pos -=7){
+    for(pos = 180; pos>=0; pos -=5){
       myservo.write(pos);
       delay(50);
     }
   }else if (MotorSpeed ==2){
-    for(pos = 0; pos <=180; pos +=7){
+    for(pos = 0; pos <=180; pos +=5){
       myservo.write(pos);
       delay(25);
     }
-    for(pos = 180; pos>=0; pos -=7){
+    for(pos = 180; pos>=0; pos -=5){
       myservo.write(pos);
       delay(25);
     }
   }else if (MotorSpeed ==3){
-    for(pos = 0; pos <=180; pos +=7){
+    for(pos = 0; pos <=180; pos +=5){
       myservo.write(pos);
     }
-    for(pos = 180; pos>=0; pos -=7){
+    for(pos = 180; pos>=0; pos -=5){
       myservo.write(pos);
     }
   }
