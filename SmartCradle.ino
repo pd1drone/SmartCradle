@@ -99,8 +99,8 @@ void setup() {
   // Print ESP8266 Local IP Address
   Serial.println(WiFi.localIP());
 
-  myservo.attach(5);
-  myservo.write(pos);
+  //myservo.attach(5);
+  //myservo.write(pos);
 
   // Checking if reachable
   server.on("/check", HTTP_GET, [](AsyncWebServerRequest *request) {
@@ -156,32 +156,37 @@ void loop() {
 
 void ControlMotorSpeed() {
   if (MotorSpeed == 0){
-    myservo.write(0);
+    myservo.detach();
+    //myservo.write(0);
   }else if (MotorSpeed == 1){
-    for(pos = 0; pos <=180; pos +=5){
-      myservo.write(pos);
-      delay(50);
-    }
-    for(pos = 180; pos>=0; pos -=5){
-      myservo.write(pos);
-      delay(50);
-    }
+    // for(pos = 0; pos <=180; pos +=5){
+    //   myservo.write(pos);
+    //   delay(50);
+    // }
+    // for(pos = 180; pos>=0; pos -=5){
+    //   myservo.write(pos);
+    //   delay(50);
+    // }
+    myservo.attach(5);
+    myservo.write(100);
   }else if (MotorSpeed ==2){
-    for(pos = 0; pos <=180; pos +=5){
-      myservo.write(pos);
-      delay(25);
-    }
-    for(pos = 180; pos>=0; pos -=5){
-      myservo.write(pos);
-      delay(25);
-    }
+    // for(pos = 0; pos <=180; pos +=5){
+    //   myservo.write(pos);
+    //   delay(25);
+    // }
+    // for(pos = 180; pos>=0; pos -=5){
+    //   myservo.write(pos);
+    //   delay(25);
+    // }
+    myservo.write(145);
   }else if (MotorSpeed ==3){
-    for(pos = 0; pos <=180; pos +=5){
-      myservo.write(pos);
-    }
-    for(pos = 180; pos>=0; pos -=5){
-      myservo.write(pos);
-    }
+    // for(pos = 0; pos <=180; pos +=5){
+    //   myservo.write(pos);
+    // }
+    // for(pos = 180; pos>=0; pos -=5){
+    //   myservo.write(pos);
+    // }
+    myservo.write(180);
   }
 }
 
