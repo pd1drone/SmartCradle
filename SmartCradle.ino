@@ -168,7 +168,7 @@ void ControlMotorSpeed() {
     //   delay(50);
     // }
     myservo.attach(5);
-    myservo.write(100);
+    myservo.write(135);
   }else if (MotorSpeed ==2){
     // for(pos = 0; pos <=180; pos +=5){
     //   myservo.write(pos);
@@ -178,7 +178,7 @@ void ControlMotorSpeed() {
     //   myservo.write(pos);
     //   delay(25);
     // }
-    myservo.write(145);
+    myservo.write(160);
   }else if (MotorSpeed ==3){
     // for(pos = 0; pos <=180; pos +=5){
     //   myservo.write(pos);
